@@ -529,8 +529,8 @@ body.beach-theme .mascot-fixed-left { display: none; }
   .compose-mascot { top: -46px; right: -12px; }
 }
 @keyframes shrek-walk {
-  from { left: -200px; }
-  to   { left: 110%; }
+  from { left: 110%; }
+  to   { left: -200px; }
 }
 
 #shrek {
