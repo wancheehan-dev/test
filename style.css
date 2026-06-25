@@ -21,25 +21,25 @@
   --mascot-size:   135px; /* one size for every mascot — keeps them identical */
 }
 body.beach-theme {
-  --bg-1: #E8F9F8;
-  --bg-2: #D0F0EE;
-  --bg-3: #F2EDD7;
-  --dot-rgba: rgba(0,172,193,0.07);
-  --hdr-1: #006D77;
-  --hdr-2: #00ACC1;
-  --hdr-3: #26C6DA;
-  --hdr-4: #4DD0E1;
-  --hdr-shadow: rgba(0,172,193,0.45);
-  --hdr-glow:   rgba(0,172,193,0.08);
-  --accent:        #26C6DA;
-  --accent-alt:    #00ACC1;
-  --accent-shadow: rgba(0,172,193,0.4);
-  --accent-sm:     rgba(0,172,193,0.14);
-  --accent-border: rgba(0,172,193,0.18);
-  --accent-dot:    rgba(0,172,193,0.55);
-  --mascot-shadow: rgba(0,172,193,0.35);
-  --footer-color:  #00838F;
-  --mascot-size:   120px; /* beach mascots stay at their original size */
+  --bg-1: #1C2B0E;
+  --bg-2: #243D12;
+  --bg-3: #2E4A18;
+  --dot-rgba: rgba(80,120,40,0.15);
+  --hdr-1: #0F1A08;
+  --hdr-2: #1C2B0E;
+  --hdr-3: #3A5C1A;
+  --hdr-4: #5A8A28;
+  --hdr-shadow: rgba(10,30,5,0.7);
+  --hdr-glow:   rgba(60,100,20,0.2);
+  --accent:        #5A8A28;
+  --accent-alt:    #3A5C1A;
+  --accent-shadow: rgba(40,70,10,0.5);
+  --accent-sm:     rgba(70,110,20,0.18);
+  --accent-border: rgba(70,110,20,0.25);
+  --accent-dot:    rgba(90,140,30,0.6);
+  --mascot-shadow: rgba(10,30,5,0.5);
+  --footer-color:  #7AB338;
+  --mascot-size:   120px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
