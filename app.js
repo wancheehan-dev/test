@@ -527,9 +527,9 @@ function postcardHTML(n, d, noteW) {
   const emoji      = BEACH_EMOJIS[Math.floor(Math.random() * BEACH_EMOJIS.length)];
 
   const GRADIENTS = [
-    ['#006D77','#00ACC1'], ['#26C6DA','#4DD0E1'],
-    ['#00838F','#006D77'], ['#4DD0E1','#80DEEA'],
-    ['#006D77','#26C6DA'], ['#80DEEA','#B2EBF2'],
+    ['#2D4A1E','#4A7A28'], ['#3B5C28','#5A8A28'],
+    ['#1C2B0E','#3A5C1A'], ['#4A6E32','#6B9E3A'],
+    ['#5C4A1E','#8A6A28'], ['#3D2B0E','#6B4A1A'],
   ];
   const grad = GRADIENTS[safeId % GRADIENTS.length];
   const headerBg = `linear-gradient(135deg,${grad[0]},${grad[1]})`;
