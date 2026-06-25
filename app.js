@@ -366,7 +366,34 @@ document.addEventListener('DOMContentLoaded',()=>{
   buildEmojiPicker(); setupFormValidation(); initTheme();
   loadNotes();
   setInterval(refreshNotes,REFRESH_INTERVAL);
+  initCountdown();
 });
+
+function initCountdown() {
+  const closeDate = window.CARD_CONFIG && window.CARD_CONFIG.closeDate;
+  if (!closeDate) return;
+  const end = new Date(closeDate);
+  end.setHours(23, 59, 59, 999);
+  function tick() {
+    const now = new Date();
+    const diff = end - now;
+    const pinBtn = document.getElementById('pinBtn');
+    const compose = document.querySelector('.compose-inner');
+    const countEl = document.getElementById('noteCount');
+    if (diff <= 0) {
+      if (countEl) countEl.innerHTML = '🐸 This swamp is now closed!';
+      if (pinBtn) pinBtn.disabled = true;
+      if (compose) { compose.style.opacity='0.4'; compose.style.pointerEvents='none'; }
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    if (countEl) countEl.innerHTML = `⏳ ${days}d ${hours}h ${mins}m left to sign!`;
+    setTimeout(tick, 30000);
+  }
+  tick();
+};
 
 // ─── View ───
 
@@ -619,10 +646,18 @@ window.resetBoard = async function() {
 // ─── Confetti ───
 function fireConfetti(){
   const c=document.getElementById('confetti');c.classList.remove('hidden');
-  const cols=["#EE4D2D","#FF7337","#FB8C00","#43A047","#1E88E5","#8E24AA","#F06292","#FFD600"];
+  const isSwamp=document.body.classList.contains('beach-theme');
   let h='';
-  for(let i=0;i<60;i++){const x=Math.random()*100,cl=cols[i%8],dl=Math.random()*0.5,du=1.5+Math.random()*1.5,sz=6+Math.random()*8,dr=(Math.random()-0.5)*80,ci=Math.random()>0.5;
-    h+='<div class="confetti-piece" style="left:'+x+'%;width:'+sz+'px;height:'+(ci?sz:sz*1.5)+'px;border-radius:'+(ci?'50%':'2px')+';background:'+cl+';margin-left:'+dr+'px;animation:confetti-fall '+du+'s '+dl+'s ease-in forwards;"></div>';}
+  if(isSwamp){
+    for(let i=0;i<60;i++){
+      const x=Math.random()*100,dl=Math.random()*0.5,du=1.5+Math.random()*1.5,sz=20+Math.random()*16,dr=(Math.random()-0.5)*80;
+      h+='<div class="confetti-piece" style="left:'+x+'%;width:'+sz+'px;height:'+sz+'px;font-size:'+sz+'px;line-height:1;background:none;margin-left:'+dr+'px;animation:confetti-fall '+du+'s '+dl+'s ease-in forwards;">🧅</div>';
+    }
+  } else {
+    const cols=["#EE4D2D","#FF7337","#FB8C00","#43A047","#1E88E5","#8E24AA","#F06292","#FFD600"];
+    for(let i=0;i<60;i++){const x=Math.random()*100,cl=cols[i%8],dl=Math.random()*0.5,du=1.5+Math.random()*1.5,sz=6+Math.random()*8,dr=(Math.random()-0.5)*80,ci=Math.random()>0.5;
+      h+='<div class="confetti-piece" style="left:'+x+'%;width:'+sz+'px;height:'+(ci?sz:sz*1.5)+'px;border-radius:'+(ci?'50%':'2px')+';background:'+cl+';margin-left:'+dr+'px;animation:confetti-fall '+du+'s '+dl+'s ease-in forwards;"></div>';}
+  }
   c.innerHTML=h;
   setTimeout(()=>{c.classList.add('hidden');c.innerHTML='';},3500);
 }
