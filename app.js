@@ -13,7 +13,7 @@ const STICKY_COLORS = [
 ];
 const EMOJIS = ["❤️","🎉","🥳","👏","🌟","💐","🫶","😢","🍀","🎊","✨","🙏","💪","🤗","🎈","🥂","💛","🦋","🌈","🫡","🤣","😭","👀","🙋‍♀️"];
 const FONTS = ["'Nunito',sans-serif","'Quicksand',sans-serif","'Nunito',sans-serif","'Quicksand',sans-serif"];
-const BEACH_EMOJIS = ['🌊','🐚','🌴','🦀','⭐','🐠','🌺','☀️','🐬','🏄'];
+const BEACH_EMOJIS = ['🐸','🧅','🌿','🐊','🐸','🧅','🌾','🍄','🐸','🧅'];
 let notes = [];
 let isSaving = false;
 
