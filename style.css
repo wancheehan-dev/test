@@ -528,3 +528,17 @@ body.beach-theme .mascot-fixed-left { display: none; }
   /* Nudge compose buddy so it doesn't clip off narrow screens */
   .compose-mascot { top: -46px; right: -12px; }
 }
+@keyframes shrek-walk {
+  from { left: -200px; }
+  to   { left: 110%; }
+}
+
+#shrek {
+  position: fixed;
+  bottom: 0;
+  left: -200px;
+  width: 180px;
+  z-index: 9999;
+  animation: shrek-walk 6s linear infinite;
+  pointer-events: none;
+}
