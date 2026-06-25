@@ -548,3 +548,36 @@ body.beach-theme #shrek {
   display: block;
   animation: shrek-walk 6s linear infinite;
 }
+body.beach-theme .footer-mascot,
+body.beach-theme .compose-mascot,
+body.beach-theme .header-mascot,
+body.beach-theme .mascot-fixed-right,
+body.beach-theme .mascot-celebrate img { 
+  display: none; 
+}
+
+body.beach-theme .footer::before {
+  content: '🐸';
+  font-size: 80px;
+  display: block;
+  text-align: center;
+}
+
+body.beach-theme .compose {
+  position: relative;
+}
+
+body.beach-theme .compose::before {
+  content: '🧅';
+  font-size: 60px;
+  position: absolute;
+  top: -50px;
+  right: -10px;
+}
+
+body.beach-theme .mascot-celebrate::before {
+  content: '🐸';
+  font-size: 80px;
+  display: block;
+  text-align: center;
+}
