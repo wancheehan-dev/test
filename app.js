@@ -583,7 +583,10 @@ function noteHTML(n, d, noteW) {
 let _boardResizeObserver=null;
 
 function renderNotes(){
+  const _cd = window.CARD_CONFIG && window.CARD_CONFIG.closeDate;
+if (!_cd) {
   document.getElementById('noteCount').textContent=notes.length+' note'+(notes.length!==1?'s':'')+' pinned';
+}
   const be=document.getElementById('boardView');
 
   if(notes.length===0){
